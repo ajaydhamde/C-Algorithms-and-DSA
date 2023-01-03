@@ -1,0 +1,46 @@
+# Project: Sorting_project
+# Makefile created by Embarcadero Dev-C++ 6.3
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o INS_SORT.o SEL_SORT.o MERGE.o QUICK_SORT.o SHELL_SORT.o BUBBLE_SORT.o
+LINKOBJ  = main.o INS_SORT.o SEL_SORT.o MERGE.o QUICK_SORT.o SHELL_SORT.o BUBBLE_SORT.o
+LIBS     = -L"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib" -L"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include"
+CXXINCS  = -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++"
+BIN      = Sorting_project.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+DEL      = C:\Program Files (x86)\Embarcadero\Dev-Cpp\devcpp.exe INTERNAL_DEL
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${DEL} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.c
+	$(CC) -c main.c -o main.o $(CFLAGS)
+
+INS_SORT.o: INS_SORT.c
+	$(CC) -c INS_SORT.c -o INS_SORT.o $(CFLAGS)
+
+SEL_SORT.o: SEL_SORT.c
+	$(CC) -c SEL_SORT.c -o SEL_SORT.o $(CFLAGS)
+
+MERGE.o: MERGE.c
+	$(CC) -c MERGE.c -o MERGE.o $(CFLAGS)
+
+QUICK_SORT.o: QUICK_SORT.c
+	$(CC) -c QUICK_SORT.c -o QUICK_SORT.o $(CFLAGS)
+
+SHELL_SORT.o: SHELL_SORT.c
+	$(CC) -c SHELL_SORT.c -o SHELL_SORT.o $(CFLAGS)
+
+BUBBLE_SORT.o: BUBBLE_SORT.c
+	$(CC) -c BUBBLE_SORT.c -o BUBBLE_SORT.o $(CFLAGS)
